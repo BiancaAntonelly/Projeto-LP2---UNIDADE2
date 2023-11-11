@@ -19,7 +19,7 @@ public class Main {
         p1.setSalario(500.0);
         p1.setConta(cc1);
         p1.setSeguro(sv1);
-        daoP.cadastraPessoa(p1);
+        daoP.cadastrarPessoa(p1);
         ContaCorrente cc2 = new ContaCorrente();
         cc2.setAgencia("2105-4");
         cc2.setNumero("123.564-9");
@@ -33,7 +33,7 @@ public class Main {
         p2.setSalario(1000.0);
         p2.setConta(cc2);
         p2.setSeguro(sv2);
-        daoP.cadastraPessoa(p2);
+        daoP.cadastrarPessoa(p2);
         ContaCorrente cc3 = new ContaCorrente();
         cc3.setAgencia("3565-4");
         cc3.setNumero("584.557-3");
@@ -47,9 +47,9 @@ public class Main {
         p3.setSalario(1500.50);
         p3.setConta(cc3);
         p3.setSeguro(sv3);
-        daoP.cadastraPessoa(p3);
+        daoP.cadastrarPessoa(p3);
 // Listar as Pessoas
-        daoP.listaPessoas();
+        daoP.listarPessoas();
 // Depósitos
         p1.getConta().depositar(200);
         p2.getConta().depositar(500);
@@ -60,9 +60,9 @@ public class Main {
 // Transferências
         p2.getConta().transferir(300, cc3);
 // Listar as Pessoas
-        daoP.listaPessoas();
+        daoP.listarPessoas();
 // Listar os impostos
-        daoP.CalcularTributosPessoas();
+        daoP.calcularTributosPessoas();
 // Listar o total de imposto e Pessoas associadas
         daoP.imprimeImpostoTotal();
     }

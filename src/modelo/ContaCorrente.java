@@ -5,6 +5,8 @@ public class ContaCorrente implements ITributavel{
     private String numero;
     private double saldo;
 
+    public ContaCorrente() {} 
+    
     public ContaCorrente(String agencia, String numero, double saldo) {
         this.agencia = agencia;
         this.numero = numero;
@@ -38,7 +40,7 @@ public class ContaCorrente implements ITributavel{
     public void sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
-            System.out.println("Saque de R$" + valor + "realizado com sucesso");
+            System.out.println("Saque de R$" + valor + " realizado com sucesso");
             System.out.println("Você tem " + saldo + " reais em sua conta");
         } else {
             System.out.println("Saldo insuficiente!");
@@ -66,11 +68,9 @@ public class ContaCorrente implements ITributavel{
             return false;
         }
     }
+
     @Override
     public double calcularTributos() {
         return saldo * 0.0038;
     }
-
 }
-
-

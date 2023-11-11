@@ -1,10 +1,20 @@
 package modelo;
 
 public class Pessoa {
-    String nome;
-    double salario;
-    ContaCorrente conta;
-    SeguroVida seguro;
+    private String nome;
+    private double salario;
+    private ContaCorrente conta;
+    private SeguroVida seguro;
+    private double tributos;
+
+    public Pessoa() {}
+    public Pessoa(String nome, double salario, ContaCorrente conta, SeguroVida seguro, double tributos) {
+        this.nome = nome;
+        this.salario = salario;
+        this.conta = conta;
+        this.seguro = seguro;
+        this.tributos = tributos;
+    }
 
     public String getNome() {
         return nome;
@@ -36,5 +46,13 @@ public class Pessoa {
 
     public void setSeguro(SeguroVida seguro) {
         this.seguro = seguro;
+    }
+
+    public double getTributos() {
+        return tributos;
+    }
+
+    public void setTributos(double tributos) {
+        this.tributos = tributos;
     }
 }
