@@ -1,7 +1,9 @@
-import dao.PessoaDAO;
-import modelo.ContaCorrente;
-import modelo.Pessoa;
-import modelo.SeguroVida;
+package imd.ufrn.br;
+
+import imd.ufrn.br.dao.PessoaDAO;
+import imd.ufrn.br.modelo.ContaCorrente;
+import imd.ufrn.br.modelo.Pessoa;
+import imd.ufrn.br.modelo.SeguroVida;
 
 public class Main {
     public static void main(String[] args) {

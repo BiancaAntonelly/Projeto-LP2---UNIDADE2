@@ -1,10 +1,10 @@
-package dao;
+package imd.ufrn.br.dao;
 
-import modelo.Pessoa;
+import imd.ufrn.br.modelo.Pessoa;
 
 import java.util.ArrayList;
 
-import controller.GeradorImpostoRenda;
+import imd.ufrn.br.controller.GeradorImpostoRenda;
 
 public class PessoaDAO {
     private ArrayList<Pessoa> pessoas = new ArrayList<>();

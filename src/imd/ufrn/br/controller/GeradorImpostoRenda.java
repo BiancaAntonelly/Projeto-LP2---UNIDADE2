@@ -1,6 +1,6 @@
-package controller;
+package imd.ufrn.br.controller;
 
-import modelo.Pessoa;
+import imd.ufrn.br.modelo.Pessoa;
 
 public class GeradorImpostoRenda {
     private double totalTributo;
