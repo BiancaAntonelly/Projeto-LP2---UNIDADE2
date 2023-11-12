@@ -48,22 +48,22 @@ public class Main {
         p3.setConta(cc3);
         p3.setSeguro(sv3);
         daoP.cadastrarPessoa(p3);
-// Listar as Pessoas
+        // Listar as Pessoas
         daoP.listarPessoas();
-// Depósitos
+        // Depósitos
         p1.getConta().depositar(200);
         p2.getConta().depositar(500);
         System.out.println();
-// Saques
+        // Saques
         p3.getConta().sacar(100);
         System.out.println();
-// Transferências
+        // Transferências
         p2.getConta().transferir(300, cc3);
-// Listar as Pessoas
+        // Listar as Pessoas
         daoP.listarPessoas();
-// Listar os impostos
+        // Listar os impostos
         daoP.calcularTributosPessoas();
-// Listar o total de imposto e Pessoas associadas
+        // Listar o total de imposto e Pessoas associadas
         daoP.imprimeImpostoTotal();
     }
 }
