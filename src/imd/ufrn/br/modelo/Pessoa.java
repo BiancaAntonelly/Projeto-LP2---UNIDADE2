@@ -1,6 +1,6 @@
 package imd.ufrn.br.modelo;
 
-public class Pessoa {
+public class Pessoa implements ITributavel {
     private String nome;
     private double salario;
     private ContaCorrente conta;
@@ -44,5 +44,10 @@ public class Pessoa {
 
     public void setSeguro(SeguroVida seguro) {
         this.seguro = seguro;
+    }
+
+    @Override
+    public double calcularTributos() {
+        return getSalario() * 0.11;
     }
 }

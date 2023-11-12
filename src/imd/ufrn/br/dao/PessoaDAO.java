@@ -8,6 +8,8 @@ import imd.ufrn.br.controller.GeradorImpostoRenda;
 
 public class PessoaDAO {
     private ArrayList<Pessoa> pessoas = new ArrayList<>();
+    private double tributoMax = 0, valorMax = 0, tributoTotal = 0;
+    private String nome1 = "", nome2 = "";
 
     public void cadastrarPessoa(Pessoa pessoa) {
         pessoas.add(pessoa);
@@ -29,16 +31,10 @@ public class PessoaDAO {
     }
 
     public void calcularTributosPessoas() {
-        System.out.println("Cálculo do tributo das pessoas");
-        for (Pessoa pessoa : pessoas) {
-            System.out.println("Nome: " + pessoa.getNome() + "\n" + "Valor tributos: " + pessoa.getConta().calcularTributos() + "\n");
-        }
-    }
-
-    public void imprimeImpostoTotal() {
-        String nome1 = "", nome2 = "";
-        double tributoMax = 0, valorMax = 0, tributoTotal = 0, tributo;
+        double tributo;
         GeradorImpostoRenda geradorImpostoRenda = new GeradorImpostoRenda();
+
+        System.out.println("Cálculo do tributo das pessoas");
 
         for (Pessoa pessoa : pessoas) {
             tributo = geradorImpostoRenda.calculaValorTotalTributo(pessoa);
@@ -51,8 +47,12 @@ public class PessoaDAO {
                 valorMax = pessoa.getSeguro().getValor(); 
                 nome2 = pessoa.getNome();
             }
-        }
 
+            System.out.println("Nome: " + pessoa.getNome() + "\n" + "Valor tributos: " + tributo + "\n");
+        }
+    }
+
+    public void imprimeImpostoTotal() {
         System.out.println("Imposto total a ser recolhido: " + tributoTotal + "\n" +
                 "Pessoa que possui maior imposto: " + nome1 + "\n" + "Valor: " + tributoMax +
                 "\n" + "Pessoa com maior seguro de vida: " + nome2 + "\n" + "valor do seguro: " + valorMax);
